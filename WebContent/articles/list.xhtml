@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<head jsf:id="head">
+	  <link jsf:name="css/style.css" rel="stylesheet" />
+	</head>
+	
+	<body jsf:id="body">
+	  <header>
+		  <h3>Articles</h3>
+		  <a jsf:id="link" jsf:outcome="/index">Home</a>
+	  </header>
+	  <section id="articles">
+	     <ui:repeat var="article" value="#{articleController.articles}">
+	        <article>
+	           <h4>
+	              <h:outputText value="#{article.title}"/>
+	           </h4>
+	           <br />
+	           <p>
+	              <h:outputText value="#{article.body}" />
+	           </p>
+	        </article>
+	     </ui:repeat>
+	  </section>
+	  <a jsf:id="link" jsf:outcome="create" class="btn">New Article</a>
+	</body>
+	<ui:debug hotkey="j"></ui:debug>
+</html>

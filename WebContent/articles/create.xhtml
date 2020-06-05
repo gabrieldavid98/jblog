@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<head jsf:id="head">
+	  <link jsf:name="css/style.css" rel="stylesheet" />
+	</head>
+	
+	<body jsf:id="body">
+	  <header>
+		  <h3>Create Article</h3>
+		  <a jsf:id="link" jsf:outcome="/index">Home</a>
+	  </header>
+	  <section id="articles">
+	     <h:form>
+		     <br />
+		     <input type="text" placeholder="Title" jsf:value="#{articleController.title}" />
+	        <br />
+	        <textarea placeholder="Body" jsf:value="#{articleController.body}"></textarea>
+	        <br />
+	        <h:commandButton value="Save" actionListener="#{articleController.save()}"></h:commandButton>
+        </h:form>
+	  </section>
+	</body>
+	<ui:debug hotkey="j"></ui:debug>
+</html>
